@@ -7,11 +7,15 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prestart": "npm run tailwindcss:build",
+    "prebuild": "NODE_ENV=production npm run tailwindcss:build",
+    "tailwindcss:build": "tailwindcss build src/styles.pcss -o src/styles.css"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.6",
+    "@angular/cdk": "^11.0.3",
     "@angular/common": "~11.0.6",
     "@angular/compiler": "~11.0.6",
     "@angular/core": "~11.0.6",
@@ -19,7 +23,9 @@
     "@angular/platform-browser": "~11.0.6",
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
+    "postcss": "^8.2.4",
     "rxjs": "~6.6.0",
+    "tailwindcss": "^2.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
